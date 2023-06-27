@@ -27,11 +27,11 @@
           <button class="logout-button" @click.prevent="logOut">LOGOUT</button>
         </li>
          <li class="nav-item">
-        <a class="nav-link" href="/notifications">
-          <i class="fa fa-bell"></i>
-          <span class="badge badge-danger">{{ unreadNotificationsCount }}</span>
-        </a>
-        </li>
+  <router-link class="nav-link" to="/notifications">
+    <i class="fa fa-bell"></i>
+    <span class="badge badge-danger">{{ unreadNotificationsCount }}</span>
+  </router-link>
+</li>
       </ul>
     </div>
   </nav>
@@ -64,7 +64,7 @@ export default {
     }
   },
   async mounted() {
-    await this.fetchUserData();
+    this.fetchUserData();
     this.fetchNotifications();
     setInterval(this.fetchNotifications, 2000);
   },
