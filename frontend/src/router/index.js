@@ -86,17 +86,17 @@ router.beforeEach((to, from, next) => {
 
   if (to.matched.some((record) => record.meta.requiresAuth)) {
     if (!token) {
-      next('/login');
+      this.$router.push("/login");
     } else {
       if (isAdmin === 'true') {
         if (to.name === 'admin') {
           next();
         } else {
-          next('/admin');
+          this.$router.push('/admin');
         }
       } else {
         if (to.name === 'admin') {
-          next('/home'); 
+          this.$router.push("/home");; 
         } else {
           next();
         }
@@ -104,7 +104,7 @@ router.beforeEach((to, from, next) => {
     }
   } else if (to.matched.some((record) => record.meta.requiresGuest)) {
     if (token) {
-      next('/home');
+      this.$router.push("/home");
     } else {
       next();
     }
