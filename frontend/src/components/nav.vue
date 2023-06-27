@@ -18,7 +18,7 @@
         <li class="nav-item" :class="{ active: currentView === 'crimes' }">
           <router-link class="nav-link" :to="{ name: 'crimes' }">Crimes</router-link>
         </li>
-        <li class="nav-item" :class="{ active: currentView === 'profile' }">
+        <li class="nav-item">
           <router-link class="nav-link" :to="{ name: 'profile' }">My Profile</router-link>
         </li>
       </ul>
