@@ -93,7 +93,7 @@ export default {
     },
     async deleteReply(commentId, replyId) {
       try {
-        await axios.delete(`https://good-neigbour.onrender.com/${commentId}/replies/${replyId}`);
+        await axios.delete(`https://good-neigbour.onrender.com/comments/${commentId}/replies/${replyId}`);
         await this.fetchComments();
       } catch (error) {
         console.error("Failed to delete reply:", error);
