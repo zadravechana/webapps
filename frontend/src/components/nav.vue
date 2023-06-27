@@ -6,7 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item " :class="{ active: currentView === 'home' }">
+        <li class="nav-item" :class="{ active: currentView === 'home' }">
           <router-link class="nav-link" :to="{ name: 'home' }">Home</router-link>
         </li>
         <li class="nav-item" :class="{ active: currentView === 'aboutUs' }">
@@ -27,11 +27,11 @@
           <button class="logout-button" @click.prevent="logOut">LOGOUT</button>
         </li>
          <li class="nav-item">
-  <router-link class="nav-link" to="/notifications">
-    <i class="fa fa-bell"></i>
-    <span class="badge badge-danger">{{ unreadNotificationsCount }}</span>
-  </router-link>
-</li>
+          <router-link class="nav-link" to="/notifications">
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-danger">{{ unreadNotificationsCount }}</span>
+          </router-link>
+        </li>
       </ul>
     </div>
   </nav>
@@ -66,7 +66,7 @@ export default {
   async mounted() {
     this.fetchUserData();
     this.fetchNotifications();
-    setInterval(this.fetchNotifications, 2000);
+    setInterval(this.fetchNotifications, 3000);
   },
   methods: {
     logOut() {
