@@ -66,7 +66,7 @@ export default {
   async mounted() {
     this.fetchUserData();
     this.fetchNotifications();
-    setInterval(this.fetchNotifications, 3000);
+    setInterval(this.fetchNotifications, 1500);
   },
   methods: {
     logOut() {
