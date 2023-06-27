@@ -36,14 +36,12 @@
         </div>
       </div>
     </div>
-    <appFooter />
   </div>
 </template>
 
 
 
 <script>
-import appFooter from "@/components/footer.vue";
 import adminNav from "@/components/navAdmin.vue";
 import axios from "axios";
 
