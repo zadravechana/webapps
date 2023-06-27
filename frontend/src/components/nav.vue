@@ -89,13 +89,14 @@ export default {
   try {
     const city = this.city;
     const userId = this.userId;
+    console.log(city);
+    console.log(userId);
     const response = await axios.get(`https://good-neigbour.onrender.com/notifications/${city}/${userId}`);
     this.notifications = response.data;
   } catch (error) {
     console.error(error);
   }
 },
-
   }
 };
 </script>
