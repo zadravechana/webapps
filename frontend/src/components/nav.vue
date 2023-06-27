@@ -85,18 +85,17 @@ export default {
         console.error('Failed to fetch user data:', error);
       }
     },
-    fetchNotifications() {
-      const city = this.city;
-      const userId = this.userId;
-      axios
-        .get(`https://good-neigbour.onrender.com/notifications/${city}/${userId}`)
-        .then((response) => {
-          this.notifications = response.data;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    },
+    async fetchNotifications() {
+  try {
+    const city = this.city;
+    const userId = this.userId;
+    const response = await axios.get(`https://good-neigbour.onrender.com/notifications/${city}/${userId}`);
+    this.notifications = response.data;
+  } catch (error) {
+    console.error(error);
+  }
+},
+
   }
 };
 </script>
