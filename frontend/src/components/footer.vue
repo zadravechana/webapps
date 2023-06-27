@@ -1,24 +1,25 @@
 <template>
-    <footer>
+  <footer>
     <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-6">
-        <h5><router-link href="/home">Home</router-link></h5>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h5><router-link href="/contact">Contact</router-link></h5>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h5><router-link href="/crimes">Crimes</router-link></h5>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h5><router-link href="/aboutus">About Us</router-link></h5>
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <h5><router-link to="/home">Home</router-link></h5>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <h5><router-link to="/contact">Contact</router-link></h5>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <h5><router-link to="/crimes">Crimes</router-link></h5>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <h5><router-link to="/aboutus">About Us</router-link></h5>
+        </div>
       </div>
     </div>
-  </div>
-  <p style="margin-top: 20px;font-family: 'Norwester', sans-serif;">&copy; 2023 Good neighbour All Rights Reserved</p>
-    </footer>
+    <p style="margin-top: 20px;font-family: 'Norwester', sans-serif;">&copy; 2023 Good neighbour All Rights Reserved</p>
+  </footer>
 </template>
+
 
 <style scoped>
  footer {

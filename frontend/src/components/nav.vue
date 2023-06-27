@@ -18,7 +18,7 @@
         <li class="nav-item" :class="{ active: currentView === 'crimes' }">
           <router-link class="nav-link" :to="{ name: 'crimes' }">Crimes</router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" :class="{ active: currentView === 'profile' }">
           <router-link class="nav-link" :to="{ name: 'profile' }">My Profile</router-link>
         </li>
       </ul>
@@ -86,18 +86,15 @@ export default {
       }
     },
     async fetchNotifications() {
-      const city=this.city;
-      const userId=this.userId;
-  if (city && userId) {
         try {
           const city = this.city;
           const userId = this.userId;
+          if (this.city && this.userId) {
           const response = await axios.get(`https://good-neigbour.onrender.com/notifications/${city}/${userId}`);
-          this.notifications = response.data;
+          this.notifications = response.data;}
         } catch (error) {
           console.error(error);
         }
-      }
 },
   }
 };
