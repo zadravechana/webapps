@@ -57,7 +57,7 @@
     password: this.password
   };
 
-  axios.post("http://localhost:4000/login", user)
+  axios.post("https://good-neigbour.onrender.com/login", user)
     .then(res => {
       if (res.status === 200) {
         localStorage.setItem('token', res.data.token);

@@ -92,7 +92,7 @@ export default {
   methods: {
     async fetchUserData() {
       try {
-        const response = await axios.get("http://localhost:4000/user", { headers: { token: localStorage.getItem('token') } });
+        const response = await axios.get("https://good-neigbour.onrender.com/user", { headers: { token: localStorage.getItem('token') } });
         this.email = response.data.user.email;
       } catch (error) {
         console.error("Failed to fetch user data:", error);
@@ -100,7 +100,7 @@ export default {
     },
     async fetchCrimes() {
       try {
-        const response = await axios.get("http://localhost:4000/crimes");
+        const response = await axios.get("https://good-neigbour.onrender.com/crimes");
         response.data.sort((a, b) => new Date(b.crimeDate) - new Date(a.crimeDate));
         this.crimes = response.data.slice(0, 5);
       } catch (error) {
@@ -119,7 +119,7 @@ export default {
         crimeLevel: this.crimeLevel
       };
       try {
-        const res = await axios.post("http://localhost:4000/createCrime", newCrime);
+        const res = await axios.post("https://good-neigbour.onrender.com/createCrime", newCrime);
         alert("Successfully reported crime!");
         this.crimeTitle = '';
         this.crimeAddress = '';

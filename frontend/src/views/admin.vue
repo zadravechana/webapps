@@ -66,7 +66,7 @@ export default {
   methods: {
     async fetchCrimes() {
       try {
-        const response = await axios.get("http://localhost:4000/crimes");
+        const response = await axios.get("https://good-neigbour.onrender.com/crimes");
         this.crimes = response.data;
       } catch (error) {
         console.error("Failed to fetch crimes:", error);
@@ -74,7 +74,7 @@ export default {
     },
     async fetchComments() {
       try {
-        const response = await axios.get("http://localhost:4000/getComments");
+        const response = await axios.get("https://good-neigbour.onrender.com/getComments");
         this.comments = response.data;
       } catch (error) {
         console.error("Failed to fetch comments:", error);
@@ -85,7 +85,7 @@ export default {
     },
     async deleteComment(commentId) {
       try {
-        await axios.delete(`http://localhost:4000/comments/${commentId}`);
+        await axios.delete(`https://good-neigbour.onrender.com/comments/${commentId}`);
         await this.fetchComments();
       } catch (error) {
         console.error("Failed to delete comment:", error);
@@ -93,7 +93,7 @@ export default {
     },
     async deleteReply(commentId, replyId) {
       try {
-        await axios.delete(`http://localhost:4000/${commentId}/replies/${replyId}`);
+        await axios.delete(`https://good-neigbour.onrender.com/${commentId}/replies/${replyId}`);
         await this.fetchComments();
       } catch (error) {
         console.error("Failed to delete reply:", error);
@@ -101,7 +101,7 @@ export default {
     },
     async deleteCrime(crimeId) {
       try {
-        await axios.delete(`http://localhost:4000/crimes/${crimeId}`);
+        await axios.delete(`https://good-neigbour.onrender.com/crimes/${crimeId}`);
         await this.fetchCrimes();
       } catch (error) {
         console.error("Failed to delete crime:", error);
@@ -109,7 +109,7 @@ export default {
     },
     async markCrimeAsResolved(crimeId) {
       try {
-        await axios.put(`http://localhost:4000/markCrime/${crimeId}`);
+        await axios.put(`https://good-neigbour.onrender.com/markCrime/${crimeId}`);
         await this.fetchCrimes();
         alert("resolved");
       } catch (error) {

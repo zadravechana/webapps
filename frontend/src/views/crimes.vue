@@ -218,7 +218,7 @@ export default {
 
     async fetchComments() {
       try {
-        const response = await axios.get("http://localhost:4000/getComments");
+        const response = await axios.get("https://good-neigbour.onrender.com/getComments");
         this.comments = response.data;
       } catch (error) {
         console.error("Failed to fetch comments:", error);
@@ -231,7 +231,7 @@ export default {
       const commentText = crime.newCommentText;
       const userEmail = this.email;
       try {
-        const response = await axios.post("http://localhost:4000/comment", {
+        const response = await axios.post("https://good-neigbour.onrender.com/comment", {
           crimeId: crime._id,
           commentText,
           userEmail,
@@ -249,7 +249,7 @@ export default {
       const userEmail = this.email;
       try {
         const response = await axios.post(
-          `http://localhost:4000/comment/${comment._id}/reply`,
+          `https://good-neigbour.onrender.com/comment/${comment._id}/reply`,
           { userEmail, replyText }
         );
         const newReply = response.data;
@@ -262,7 +262,7 @@ export default {
     },
     async fetchUserData() {
       try {
-        const res = await axios.get("http://localhost:4000/user", {
+        const res = await axios.get("https://good-neigbour.onrender.com/user", {
           headers: { token: localStorage.getItem("token") },
         });
         this.email = res.data.user.email;
@@ -272,7 +272,7 @@ export default {
     },
     async fetchCrimes() {
       try {
-        const response = await axios.get("http://localhost:4000/crimes");
+        const response = await axios.get("https://good-neigbour.onrender.com/crimes");
         response.data.sort(
           (a, b) => new Date(b.crimeDate) - new Date(a.crimeDate)
         );

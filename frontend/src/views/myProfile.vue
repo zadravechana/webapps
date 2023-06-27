@@ -73,7 +73,7 @@ export default {
   methods: {
     async fetchUserData() {
       try {
-        const response = await axios.get("http://localhost:4000/user", { headers: { token: localStorage.getItem('token') } });
+        const response = await axios.get("https://good-neigbour.onrender.com/user", { headers: { token: localStorage.getItem('token') } });
         this.firstname = response.data.user.firstname;
         this.lastname = response.data.user.lastname;
         this.email = response.data.user.email;
@@ -83,7 +83,7 @@ export default {
     },
     async fetchCrimes() {
       try {
-        const response = await axios.get("http://localhost:4000/crimes");
+        const response = await axios.get("https://good-neigbour.onrender.com/crimes");
         const filteredCrimes = response.data.filter(crime => crime.reporterEmail === this.email);
         this.crimes = filteredCrimes;
       } catch (error) {
