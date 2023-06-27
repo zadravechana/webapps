@@ -48,8 +48,7 @@ import axios from "axios";
 export default {
   name: "admin",
   components: {
-    appFooter,
-    adminNav,
+    adminNav
   },
   data() {
     return {
