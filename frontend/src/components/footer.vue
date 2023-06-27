@@ -3,16 +3,16 @@
     <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-6">
-        <h5><a href="/home">Home</a></h5>
+        <h5><router-link href="/home">Home</router-link></h5>
       </div>
       <div class="col-md-3 col-sm-6">
-        <h5><a href="/contact">Contact</a></h5>
+        <h5><router-link href="/contact">Contact</router-link></h5>
       </div>
       <div class="col-md-3 col-sm-6">
-        <h5><a href="/crimes">Crimes</a></h5>
+        <h5><router-link href="/crimes">Crimes</router-link></h5>
       </div>
       <div class="col-md-3 col-sm-6">
-        <h5><a href="/aboutus">About Us</a></h5>
+        <h5><router-link href="/aboutus">About Us</router-link></h5>
       </div>
     </div>
   </div>

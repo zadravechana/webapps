@@ -75,7 +75,7 @@ export default {
     },
    async fetchUserData() {
       try {
-        const response = await axios.get('http://localhost:4000/user', {
+        const response = await axios.get('https://good-neigbour.onrender.com/user', {
           headers: { token: localStorage.getItem('token') }
         });
         this.city = response.data.user.address;
@@ -89,7 +89,7 @@ export default {
       const city = this.city;
       const userId = this.userId;
       axios
-        .get(`http://localhost:4000/notifications/${city}/${userId}`)
+        .get(`https://good-neigbour.onrender.com/notifications/${city}/${userId}`)
         .then((response) => {
           this.notifications = response.data;
         })
